@@ -1,5 +1,6 @@
 # Local discovery history; team-facing conclusions live in research/.
 .scratch/problem-user/
+.scratch/roast/
 
 # Local environment and credentials
 .DS_Store
