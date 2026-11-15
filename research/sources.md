@@ -34,6 +34,32 @@
 - [SAFE](https://github.com/google-deepmind/long-form-factuality/blob/main/eval/safe/README.md): проверка фактов с поиском; полезный ориентир для сравнения, не свидетельство спроса.
 - [ALCE](https://aclanthology.org/2023.emnlp-main.398.pdf): оценка генерации с цитированием; корректность текста и качество ссылок разделяются.
 
+## Ширина проблемы: ошибки извлечения и проверка
+
+Сверены 16 ноября 2026 по аннотациям или страницам организаций, если не указано иное.
+
+| Источник | Что дает нам |
+| --- | --- |
+| [Gøtzsche et al., 2007, JAMA](https://doi.org/10.1001/jama.298.4.430) | Ошибки извлечения в 17 из 27 метаанализов; 7 из 10 перепроверенных ошибочны. Ручной процесс до LLM: показывает цену ошибки, не текущее состояние |
+| [Hoffmann et al., 2021, JCE](https://doi.org/10.1016/j.jclinepi.2021.05.022) | ~29 тыс. систематических обзоров в PubMed за 2019 год. Масштаб задачи извлечения, не спрос на наш инструмент |
+| [Mathes et al., 2017](https://doi.org/10.1186/s12874-017-0431-4); [Buscemi et al., 2006](https://doi.org/10.1016/j.jclinepi.2005.11.010) | До 50% ошибок извлечения; одиночное извлечение ошибается чаще двойного, двойное дольше |
+| [Jansen et al., 2025, Psychological Bulletin](https://doi.org/10.1037/bul0000501) | 8 LLM, 312 тыс. значений: для 20% переменных точность неприемлема. LLM не снимают проверку |
+| [Lagisz et al., 2025, препринт](https://doi.org/10.32942/x2f346) | Повторные запуски Elicit: значения совпали в 90%, цитаты-обоснования в 46%. Аргумент про нестабильность provenance; статус публикации не проверен |
+| [Pangakis et al., 2023](https://arxiv.org/abs/2306.00176) | GPT-4 в 9 из 27 задач аннотации из социальных наук: точность или полнота ниже 0,5 |
+| [Laouenan et al., 2022, Scientific Data](https://pmc.ncbi.nlm.nih.gov/articles/PMC9184645/) | База 2,29 млн известных людей из Wikipedia/Wikidata: дубли, пропуски места рождения у 29–34%, ошибок больше у менее известных; ручная двойная валидация 5 тыс. записей. Ближайший пример биографической базы и ее проверки |
+| [ACLED, методология](https://acleddata.com/methodology/how-does-acled-code-and-review-data-ensure-quality); [Hong et al., 2025](https://ideas.repec.org/a/gam/jdataj/v10y2025i10p158-d1762908.html) | Событийные базы: повторные сообщения об одном событии, многоступенчатая проверка; у GDELT точность ключевых полей ~55%. Полный текст Hong не открывался |
+| [BCG, Genealogical Proof Standard](https://bcgcertification.org/ethics-standards/) | Пять элементов стандарта доказательства в генеалогии: исчерпывающий поиск, ссылки, анализ, разрешение противоречий, вывод. Готовый внешний критерий «хорошей проверки» |
+
+## Сбор данных AI-агентами
+
+| Источник | Что дает нам |
+| --- | --- |
+| [Afonso et al., 2026, NBER WP 35188](https://www.nber.org/papers/w35188) | Deep research в цикле для построения датасета в экономике. Подтверждает практику; сравнения с ручным эталоном в аннотации нет |
+| [Rao, Wong, Callison-Burch, 2026, препринт](https://arxiv.org/abs/2604.03173) | 3–13% URL от моделей и deep research агентов выдуманы, 5–18% не открываются; проверка URL инструментом снижает долю битых ссылок |
+| [Tow Center / CJR, 2025](https://www.cjr.org/tow_center/we-compared-eight-ai-search-engines-theyre-all-bad-at-citing-news.php); [EBU/BBC, 2025](https://www.ebu.ch/news/2025/10/ai-s-systemic-distortion-of-news-is-consistent-across-languages-and-territories-international-study-by-public-service-broadcaste) | Ошибки цитирования и атрибуции у AI-поиска и ассистентов. Измеряли ответы о новостях, не сбор датасетов: перенос — аналогия |
+| [WikiProject Women in Red](https://en.wikipedia.org/wiki/Wikipedia:WikiProject_Women_in_Red); [Kronk, 2026, препринт](https://arxiv.org/abs/2609.22375) | Смещение покрытия: ~20% биографий en-Википедии о женщинах; в Wikidata перекос гражданства и мест рождения. Агент, собирающий данные из этих источников, наследует смещение |
+| [COPE — Authorship and AI tools](https://publicationethics.org/guidance/cope-position/authorship-and-ai-tools); [Cochrane, Campbell, JBI, CEE, 2025](https://pmc.ncbi.nlm.nih.gov/articles/PMC12594113/); [AEA Data and Code Policy](https://www.aeaweb.org/journals/data/data-code-policy) | Требования раскрывать использование AI при сборе данных и описывать происхождение данных. Текст COPE сверен по фрагменту, страница возвращала 403 |
+
 ## Масштаб потребности и обучение
 
 - [Liao et al., LLMs as Research Tools, версия 2024](https://arxiv.org/html/2411.05025v1): опрос авторов об использовании LLM. Самоотбор и состав выборки ограничивают обобщение; потребность в дополнительном проверяющем не измерена.
