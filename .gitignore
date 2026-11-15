@@ -1,0 +1,12 @@
+# Local discovery history; team-facing conclusions live in research/.
+.scratch/problem-user/
+
+# Local environment and credentials
+.DS_Store
+.env
+.env.*
+!.env.example
+.venv/
+__pycache__/
+*.py[cod]
+node_modules/
