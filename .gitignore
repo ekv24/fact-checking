@@ -11,3 +11,7 @@
 __pycache__/
 *.py[cod]
 node_modules/
+
+# Интерфейс: логи и кэш тестов
+app/logs/
+.pytest_cache/

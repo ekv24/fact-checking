@@ -1,0 +1,6 @@
+person,event_type,date,source_url,quote
+Мария Иванова,брак,1952,https://example.org/ivanova,В 1952 году Мария вышла замуж.
+Пётр Смирнов,рождение ребёнка,1960-05,https://example.org/smirnov,
+Анна Кузнецова,смерть супруга,1975,https://example.org/kuznetsova,Овдовела в 1975 году.
+Иван Петров,брак,около 1948,,
+Елена Орлова,рождение ребёнка,1963-11-02,https://example.org/orlova,Дочь родилась 2 ноября 1963 года.
